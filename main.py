@@ -78,50 +78,52 @@ if translateBtn:
         fr_translated = translator.translate(it, src="it", dest="fr")
         st.subheader("French  version")
         st.write(str(fr_translated.text))
+        try:
+            # AUDIO
+            itAudio = generate(text=it, voice="Matilda", model="eleven_multilingual_v1")
+            st.write("Italiano")
+            st.audio(itAudio, format="audio/mpeg")
+            st.download_button(
+                label="Download Audio MP3 in Italiano",
+                data=itAudio,
+                file_name="Italiano.mp3",
+                mime="audio/mpeg",
+            )
+            enAudio = generate(
+                text=en_translated.text, voice="Matilda", model="eleven_multilingual_v1"
+            )
+            st.write("English")
+            st.audio(enAudio, format="audio/mpeg")
+            st.download_button(
+                label="Download Audio MP3 in Inglese",
+                data=enAudio,
+                file_name="Inglese.mp3",
+                mime="audio/mpeg",
+            )
 
-        # AUDIO
-        itAudio = generate(text=it, voice="Matilda", model="eleven_multilingual_v1")
-        st.write("Italiano")
-        st.audio(itAudio, format="audio/mpeg")
-        st.download_button(
-            label="Download Audio MP3 in Italiano",
-            data=itAudio,
-            file_name="Italiano.mp3",
-            mime="audio/mpeg",
-        )
-        enAudio = generate(
-            text=en_translated.text, voice="Matilda", model="eleven_multilingual_v1"
-        )
-        st.write("English")
-        st.audio(enAudio, format="audio/mpeg")
-        st.download_button(
-            label="Download Audio MP3 in Inglese",
-            data=enAudio,
-            file_name="Inglese.mp3",
-            mime="audio/mpeg",
-        )
-
-        deAudio = generate(
-            text=de_translated.text, voice="Matilda", model="eleven_multilingual_v1"
-        )
-        st.write("Deutsch")
-        st.audio(deAudio, format="audio/mpeg")
-        st.download_button(
-            label="Download Audio MP3 in Tedesco",
-            data=deAudio,
-            file_name="Tedesco.mp3",
-            mime="audio/mpeg",
-        )
-        frAudio = generate(
-            text=fr_translated.text, voice="Matilda", model="eleven_multilingual_v1"
-        )
-        st.write("FranÃ§ais")
-        st.audio(frAudio, format="audio/mpeg")
-        st.download_button(
-            label="Download Audio MP3 in Francese",
-            data=frAudio,
-            file_name="Francese.mp3",
-            mime="audio/mpeg",
-        )
-        st.success("Audio guide tradotto correttamente")
-        st.balloons()
+            deAudio = generate(
+                text=de_translated.text, voice="Matilda", model="eleven_multilingual_v1"
+            )
+            st.write("Deutsch")
+            st.audio(deAudio, format="audio/mpeg")
+            st.download_button(
+                label="Download Audio MP3 in Tedesco",
+                data=deAudio,
+                file_name="Tedesco.mp3",
+                mime="audio/mpeg",
+            )
+            frAudio = generate(
+                text=fr_translated.text, voice="Matilda", model="eleven_multilingual_v1"
+            )
+            st.write("Francais")
+            st.audio(frAudio, format="audio/mpeg")
+            st.download_button(
+                label="Download Audio MP3 in Francese",
+                data=frAudio,
+                file_name="Francese.mp3",
+                mime="audio/mpeg",
+            )
+            st.success("Audio guide tradotto correttamente")
+            st.balloons()
+        except Exception as e:
+            st.write("C'è stato un problema: ", e)
