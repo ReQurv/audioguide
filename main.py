@@ -12,7 +12,7 @@ from PIL import Image
 # GLOBALS
 sample_rate = 44100
 translator = Translator()
-st.set_page_config(layout="wide", page_icon="🌍", page_title="Chat-Bot Bandi Beta")
+st.set_page_config(layout="wide", page_icon="🌍", page_title="Chat-Bot Aufi Guide Beta")
 st.title("Multilanguage audio guide with :violet[text-to-speech]")
 st.markdown(
     """
