@@ -30,8 +30,8 @@ with st.sidebar:
         """
                 <h3>ReQurv è una società di sviluppo di software innovativi.</h3>
                 <p> Ci occupiamo di <b>innovazione</b> e creaimo progetti su misura
-                per imprese e attivit' che vogliono fare utlizzare strumenti di AI
-                per la crescita delle proprie attività<br/>
+                per imprese e attività che vogliono utlizzare strumenti di AI
+                per la crescita delle proprie attività <br/>
                 Se vuoi parlare con noi questi sono si nostri contatti:
                 """,
         unsafe_allow_html=True,
