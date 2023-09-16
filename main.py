@@ -81,8 +81,8 @@ if translateBtn:
 
         # AUDIO
         itAudio = generate(text=it, voice="Matilda", model="eleven_multilingual_v1")
-        st.write("Italiano", format="audio/mpeg")
-        st.audio(itAudio)
+        st.write("Italiano")
+        st.audio(itAudio, format="audio/mpeg")
         st.download_button(
             label="Download Audio MP3 in Italiano",
             data=itAudio,
