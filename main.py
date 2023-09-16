@@ -10,7 +10,7 @@ from elevenlabs import generate, set_api_key
 from PIL import Image
 
 # GLOBALS
-set_api_key(ELEVENLAB_API_KEY)
+set_api_key(st.secrets["ELEVENLAB_API_KEY"])
 sample_rate = 44100
 translator = Translator()
 st.set_page_config(layout="wide", page_icon="🌍", page_title="Chat-Bot Audio Guide Beta")
