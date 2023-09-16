@@ -30,9 +30,9 @@ with st.sidebar:
     st.markdown(
         """
                 <h3>ReQurv è una società di sviluppo di software innovativi.</h3>
-                <p> Ci occupiamo di <b>innovazione</b> e creaimo progetti su misura
-                per imprese e attività che vogliono utlizzare strumenti di AI
-                per la crescita delle proprie attività <br/>
+                <p> Ci occupiamo di <b>innovazione</b> e creiamo progetti su misura
+                per imprese e attività che vogliono utilizzare strumenti di AI
+                per la crescita delle proprie attivit&agrave; <br/>
                 Se vuoi parlare con noi questi sono si nostri contatti:
                 """,
         unsafe_allow_html=True,
