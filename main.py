@@ -36,7 +36,7 @@ La quarta sala del museo ospita una collezione di dipinti e sculture del XIX e X
 with st.sidebar:
     # IMAGE
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    image_path = Image.open(os.path.join(script_dir, "assets/C_White.png"))
+    image_path = Image.open(os.path.join(script_dir, "src/assets/C_White.png"))
     st.image(image_path)
 
     st.title("ReQurv è una società di sviluppo di Intelligenza Artificiale.")
