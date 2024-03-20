@@ -9,7 +9,7 @@ import streamlit as st
 from elevenlabs import generate, set_api_key
 from PIL import Image
 
-from services.translation import translateString
+from src.services.translation import translateString
 
 # GLOBALS
 set_api_key(st.secrets["ELEVENLAB_API_KEY"])
