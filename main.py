@@ -8,7 +8,6 @@ import os
 import streamlit as st
 from elevenlabs import generate, set_api_key
 from PIL import Image
-
 from src.services.translation import translateString
 
 # GLOBALS
@@ -58,7 +57,7 @@ with st.sidebar:
     st.write("**Enzo La Rosa** : enzo.larosa@requrv.io")
 
 
-st.title("Audioguide in multilingua :violet[in pochi secondi]")
+st.title("Audioguide in multilingua :violet[in pochi secondi] - ReQurv")
 st.subheader(
     """
    Genera la tua audio guida personale in 4 lingue in meno di un minuto 🇮🇹 🇬🇧 🇩🇪 🇨🇵
@@ -108,6 +107,18 @@ if translateBtn:
         fr_translated = translateString(it, fromLang="it", toLang="fr")
         st.subheader("French  version")
         st.write(str(fr_translated))
+
+        ch_translated = translateString(it, fromLang="it", toLang="zh-cn")
+        st.subheader("Chinese  version")
+        st.write(str(ch_translated))
+
+        ru_translated = translateString(it, fromLang="it", toLang="ru")
+        st.subheader("Russian  version")
+        st.write(str(ru_translated))
+
+        pl_translated = translateString(it, fromLang="it", toLang="pl")
+        st.subheader("Polish  version")
+        st.write(str(pl_translated))
         try:
             # AUDIO
             itAudio = generate(text=it, voice="Matilda", model="eleven_multilingual_v1")
@@ -142,6 +153,7 @@ if translateBtn:
                 file_name="Tedesco.mp3",
                 mime="audio/mpeg",
             )
+
             frAudio = generate(
                 text=fr_translated, voice="Matilda", model="eleven_multilingual_v1"
             )
@@ -153,6 +165,43 @@ if translateBtn:
                 file_name="Francese.mp3",
                 mime="audio/mpeg",
             )
+
+            chAudio = generate(
+                text=ch_translated, voice="Matilda", model="eleven_multilingual_v1"
+            )
+            st.write("Chinese")
+            st.audio(chAudio, format="audio/mpeg")
+            st.download_button(
+                label="Download Audio MP3 in Cinese",
+                data=chAudio,
+                file_name="Cinese.mp3",
+                mime="audio/mpeg",
+            )
+
+            ruAudio = generate(
+                text=ru_translated, voice="Matilda", model="eleven_multilingual_v1"
+            )
+            st.write("Russian")
+            st.audio(ruAudio, format="audio/mpeg")
+            st.download_button(
+                label="Download Audio MP3 in Russo",
+                data=ruAudio,
+                file_name="Russo.mp3",
+                mime="audio/mpeg",
+            )
+
+            plAudio = generate(
+                text=pl_translated, voice="Matilda", model="eleven_multilingual_v1"
+            )
+            st.write("Polish")
+            st.audio(plAudio, format="audio/mpeg")
+            st.download_button(
+                label="Download Audio MP3 in Polacco",
+                data=plAudio,
+                file_name="Polacco.mp3",
+                mime="audio/mpeg",
+            )
+
             st.success("Audio guide tradotto correttamente")
             st.balloons()
         except Exception as e:
