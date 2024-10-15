@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "audioguide"
+version = "0.1.0"
+description = ""
+authors = ["ZiggyReQurv <enzo.larosa@requrv.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+elevenlabs = "0.2.27"
+googletrans = "3.1.0a0"
+pillow = "10.2.0"
+streamlit = "1.32.2"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
